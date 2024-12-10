@@ -67,7 +67,7 @@ const Checkout = () => {
               Don't worry if you don't have money! Click the button below to get
               your <span className="text-green-600">free order</span> now!
             </p>
-            <Button onClick={onPaymentSuccess}>Create Order</Button>
+            <Button onClick={onPaymentSuccess}>Buy for Free</Button>
             <p className="text-center text-gray-700 text-sm">IF create order but not works reload the page and try again !</p>
 
             {calculateTotal() && (
