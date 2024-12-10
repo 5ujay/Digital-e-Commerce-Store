@@ -68,6 +68,7 @@ const Checkout = () => {
               your <span class="text-green-600">free order</span> now!
             </p>
             <Button onClick={onPaymentSuccess}>Create Order</Button>
+            <p className="text-center text-gray-700 text-sm">IF create order but not works reload the page and try again !</p>
 
             {calculateTotal() && (
               <PayPalButtons
