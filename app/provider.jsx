@@ -5,6 +5,7 @@ import { useUser } from "@clerk/nextjs";
 import axios from "axios";
 import { CartContext } from "./_context/CartContext";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import Footer from "./_components/Footer";
 
 const Provider = ({ children }) => {
   const { user } = useUser();
@@ -48,6 +49,7 @@ const Provider = ({ children }) => {
         <PayPalScriptProvider options={{ clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID }}>
           <Header />
           <div>{children}</div>
+          <Footer/>
         </PayPalScriptProvider>
       </CartContext.Provider>
     </div>
