@@ -65,7 +65,7 @@ const Checkout = () => {
 
             <p className="text-lg font-semibold text-green-800 bg-green-100 p-4 rounded-md text-center">
               Don't worry if you don't have money! Click the button below to get
-              your <span class="text-green-600">free order</span> now!
+              your <span className="text-green-600">free order</span> now!
             </p>
             <Button onClick={onPaymentSuccess}>Create Order</Button>
             <p className="text-center text-gray-700 text-sm">IF create order but not works reload the page and try again !</p>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -14,6 +14,7 @@ import Link from "next/link";
 
 const CartList = ({ children }) => {
   const { cart, setCart } = useContext(CartContext);
+  const [isSheetOpen, setIsSheetOpen] = useState(false); // state to control the sheet's open/close
 
   const calculateTotal = () => {
     let total = 0;
@@ -23,10 +24,15 @@ const CartList = ({ children }) => {
     return total;
   };
 
+  const handleCheckoutClick = () => {
+    // Close the sheet when checkout is clicked
+    setIsSheetOpen(false);
+  };
+
   return (
     <div>
-      <Sheet>
-        <SheetTrigger>{children}</SheetTrigger>
+      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+        <SheetTrigger onClick={() => setIsSheetOpen(true)}>{children}</SheetTrigger>
         <SheetContent>
           <SheetHeader>
             <SheetTitle>Your Cart</SheetTitle>
@@ -46,7 +52,12 @@ const CartList = ({ children }) => {
                   </h2>
 
                   <Link href={"/checkout"}>
-                    <Button className="w-full mt-2">Checkout</Button>
+                    <Button
+                      className="w-full mt-2"
+                      onClick={handleCheckoutClick} // close the sheet when checkout is clicked
+                    >
+                      Checkout
+                    </Button>
                   </Link>
                 </div>
               </div>
