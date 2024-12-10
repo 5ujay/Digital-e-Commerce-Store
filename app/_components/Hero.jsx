@@ -13,7 +13,7 @@ const Hero = () => {
             Speed Your Creative Workflow
           </h2>
           <p className="text-gray-200 text-lg md:text-2xl">
-            Join a growing community of 43,436 designers, creators, and makers
+            Join a growing community of designers, creators, and makers
             around the world.
           </p>
           <div className="flex gap-5">
