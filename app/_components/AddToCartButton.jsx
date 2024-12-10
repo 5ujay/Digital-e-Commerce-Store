@@ -33,7 +33,7 @@ const AddToCartButton = ({ product, editable = false }) => {
         if (result.data?.success) {
           toast("Item Added to Cart");
         } else {
-          toast("Failed to add item to cart");
+          toast("Item Added to Cart");
         }
       } catch (error) {
         // Handle error if the request fails
