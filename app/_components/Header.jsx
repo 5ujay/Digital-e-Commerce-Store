@@ -15,7 +15,7 @@ const Header = () => {
     },
     {
       name: "Store",
-      path: "/store",
+      path: "/",
     },
     {
       name: "Explore",
