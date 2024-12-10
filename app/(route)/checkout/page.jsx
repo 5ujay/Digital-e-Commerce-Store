@@ -15,7 +15,7 @@ const Checkout = () => {
   const { user } = useUser();
 
   const [loading, setLoading] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
   const calculateTotal = () => {
     let total = 0;
@@ -34,11 +34,11 @@ const Checkout = () => {
     });
     if (result) {
       setCart([]);
-      toast("Order Created Successfully")
+      toast("Order Created Successfully");
     }
     setLoading(false);
     console.log(result.data);
-    router.replace("/dashboard")
+    router.replace("/dashboard");
   };
 
   return (
@@ -60,9 +60,13 @@ const Checkout = () => {
             <hr className="h-1 bg-black" />
             <p>
               Your payment recipet and product will be deilver to your register
-              email address : {user?.primaryEmailAddress?.emailAddress}
+              email address : <span className="bg-yellow-300 text-black p-1"> {user?.primaryEmailAddress?.emailAddress}</span>
             </p>
 
+            <p className="text-lg font-semibold text-green-800 bg-green-100 p-4 rounded-md text-center">
+              Don't worry if you don't have money! Click the button below to get
+              your <span class="text-green-600">free order</span> now!
+            </p>
             <Button onClick={onPaymentSuccess}>Create Order</Button>
 
             {calculateTotal() && (
