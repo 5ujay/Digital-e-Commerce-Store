@@ -49,30 +49,34 @@ const Explore = () => {
   };
 
   return (
-    <div className="mt-10">
-      <h2 className="font-bold text-3xl">Explore</h2>
-      <div>
-        <div className="flex items-center gap-2">
-          <h4>Search : </h4>
+    <div className="mt-10 px-4 md:px-8">
+      <h2 className="font-bold text-3xl text-center md:text-left">Explore</h2>
+      <div className="mt-6">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-2 mb-4">
+          <h4 className="text-lg sm:text-base">Search:</h4>
           <Input
-            className="w-80"
+            className="w-full sm:w-80"
             onChange={(e) => setSearchText(e.target.value)}
+            placeholder="Search products"
           />
           <Button
             onClick={() => {
               GetAllProductsList(0);
               setProductList([]);
             }}
+            className="w-full sm:w-auto mt-2 sm:mt-0"
           >
             <Search /> Search
           </Button>
           <SortProducts onSortChange={(value) => setSort(value)} />
         </div>
       </div>
+
       <DisplayProductList productList={productList} />
+
       {/* Pass productList as a prop to display products */}
       <div className="flex items-center justify-center mt-5">
-        <Button onClick={() => GetAllProductsList(offset + 6)}>
+        <Button onClick={() => GetAllProductsList(offset + 6)} className="w-full sm:w-auto">
           Load More
         </Button>
       </div>

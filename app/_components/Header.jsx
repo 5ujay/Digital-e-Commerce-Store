@@ -28,9 +28,11 @@ const Header = () => {
   return (
     <div className="flex justify-between items-center p-4 px-6 md:px-32 lg:px-48 bg-primary border-b-4 border-black">
       {/* Logo */}
+      <Link href={"/"}>
       <h2 className="font-bold text-lg md:text-xl bg-black text-white px-2 py-1">
-        DIGI LOGO
+        DS
       </h2>
+      </Link>
 
       {/* Menu List */}
       <ul className="sm:flex gap-5 space-x-4 md:space-x-10 flex-wrap justify-center md:justify-start hidden">
