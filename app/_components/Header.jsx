@@ -6,6 +6,7 @@ import Link from "next/link";
 import React, {  useContext } from "react";
 import { CartContext } from "../_context/CartContext";
 import CartList from "./CartList";
+import Image from "next/image";
 
 const Header = () => {
   const MenuList = [
@@ -29,9 +30,10 @@ const Header = () => {
     <div className="flex justify-between items-center p-4 px-6 md:px-32 lg:px-48 bg-primary border-b-4 border-black">
       {/* Logo */}
       <Link href={"/"}>
-      <h2 className="font-bold text-lg md:text-xl bg-black text-white px-2 py-1">
+      {/* <h2 className="font-bold text-lg md:text-xl bg-black text-white px-2 py-1">
         DS
-      </h2>
+      </h2> */}
+      <Image className="rounded-full" src={"/Digi_Logo.avif"} alt="logo" width={50} height={50}/>
       </Link>
 
       {/* Menu List */}
